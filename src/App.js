@@ -1,15 +1,16 @@
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import Home from "./Pages/Home/Home";
-import Posts from "./Pages/Post/Posts";
-import PostDetail from "./Pages/Post/PostDetail";
+import './Assets/Css/fonts.css';
+import './Assets/Css/styles.css';
+import 'bootstrap/dist/js/bootstrap.bundle';
+
+import RoutePublic from './Routes/Route';
+
+import GlobalState from './Context/GlobalState';
+
 function App() {
   return (
-    <>
-      <Header />
-      <Home />
-      <Footer />
-    </>
+    <GlobalState>
+        <RoutePublic />
+    </GlobalState>
   );
 }
 

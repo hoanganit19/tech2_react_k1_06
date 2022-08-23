@@ -1,22 +1,31 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom';
 
 export class PostItem extends Component {
+
+  constructor(props){
+    super(props);
+  }
+
   render() {
+
+    const {post} = this.props;
+
     return (
         <>
             <div className="post-preview">
-              <a href="post.html">
+                <NavLink to={`bai-viet/${post.id}`}>
                 <h2 className="post-title">
-                  Man must explore, and this is exploration at its greatest
+                  {post.title}
                 </h2>
                 <h3 className="post-subtitle">
-                  Problems look mighty small from 150 miles up
+                  {post.excerpt}
                 </h3>
-              </a>
+              </NavLink>
               <p className="post-meta">
                 Posted by
-                <a href="#!">Start Bootstrap</a>
-                on September 24, 2022
+                 <a href="#!">Tech2</a> - 
+                {post.created_at}
               </p>
             </div>
             {/* Divider*/}
